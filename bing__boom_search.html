@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Links</title>
+</head>
+<body>
+
+<script>
+  function openLinks() {
+    // Replace 'link1' and 'link2' with your actual URLs
+    var list = [
+      'https://www.bing.com/search?pglt=163&q=the+joker+casts&cvid=935eed42b2ca4519a58eb5b1d89004ef&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQ6wcYQDIGCAIQABhAMgYIAxAAGEAyBggEEAAYQDIGCAUQABhAMgYIBhAAGEAyBggHEAAYQDIGCAgQABhA0gEINDY4NmowajGoAgCwAgA&FORM=ANNTA1&PC=U531',
+      'https://www.bing.com/search?q=Joaquin+Phoenix&FORM=SNAPST&filters=sid:%222993e697-4913-afa5-3fef-d72581030951%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Joaquin+Phoenix&FORM=SNAPST&filters=sid:%222993e697-4913-afa5-3fef-d72581030951%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Zazie+Beetz&FORM=SNAPST&filters=sid:%22164e0d2b-c6aa-04be-dd0e-dc44baf0d679%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Frances+Conroy&FORM=SNAPST&filters=sid:%22256b147f-daba-4a2f-16d6-abd0b1d8e88f%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Brett+Cullen&FORM=SNAPST&filters=sid:%22e53f8a1c-d665-8e49-ad10-bc517c51a821%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Shea+Whigham&FORM=SNAPST&filters=sid:%22d1620d2e-ae64-cca3-b104-8cd2effc0bd7%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Bill+Camp&FORM=SNAPST&filters=sid:%2246a30cf3-120f-4a41-8b53-4ff000e77d37%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Glenn+Fleshler&FORM=SNAPST&filters=sid:%2252e22fb8-0bec-4b5f-500b-c01b5ae74fd6%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Leigh+Gill&FORM=SNAPST&filters=sid:%2219b27d42-1c95-d8b1-25e6-68c0d769affa%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Josh+Pais&FORM=SNAPST&filters=sid:%225dcf68ea-92c9-dd35-793a-1aa33ccda597%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Marc+Maron&FORM=SNAPST&filters=sid:%225019caf7-9640-e99c-49d1-446c011a28b8%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Sondra+James&FORM=SNAPST&filters=sid:%226bd7e3ad-7ac8-b2c8-8ea9-8ac736ab2491%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=0&efirst=1',
+      'https://www.bing.com/search?q=Murphy+Guyer&FORM=SNAPST&filters=sid:%225eb59c83-b530-1074-9c7a-baf7b8a9c9d6%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Douglas+Hodge&FORM=SNAPST&filters=sid:%2217489bd8-fbd3-2f65-0f9f-bf760e0e938c%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Carrie+Louise+Putrello&FORM=SNAPST&filters=sid:%2248dbad13-e7bd-f664-922e-2ab480b4538b%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Hannah+Gross&FORM=SNAPST&filters=sid:%227e2f0d97-a5ca-e149-316e-28ef35d6236a%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Frank+Wood+(actor)&FORM=SNAPST&filters=sid:%22f5c236b5-8fb5-7f43-876c-f8475072c5fc%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Brian+Tyree+Henry&FORM=SNAPST&filters=sid:%22fd3d85bb-dc3a-8cb1-5344-7fe8eb1b109b%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Mick+Szal&FORM=SNAPST&filters=sid:%22a436f7c9-2e15-01e7-0174-c0a9f9a6ddaf%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Michael+Benz&FORM=SNAPST&filters=sid:%22f8760242-8d73-40da-a175-fd341100b411%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Ben+Warheit&FORM=SNAPST&filters=sid:%2271d31e22-cd09-4a4d-a97e-5a8e074c0556%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Gary+Gulman&FORM=SNAPST&filters=sid:%22781077cb-82ba-75a8-b1ca-c1dba194c3b0%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Sam+Morril&FORM=SNAPST&filters=sid:%2254702ef5-585f-74e6-6495-1b41abfb5863%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Chris+Redd&FORM=SNAPST&filters=sid:%22dc4af5b3-22e2-80f6-bb9d-b4ad04e344f7%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=1536&efirst=1',
+      'https://www.bing.com/search?q=Mandela+Bellamy&FORM=SNAPST&filters=sid:%22d9d8b5e9-b5e8-ede1-68a3-545da30d30ef%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Greer+Barnes+(comedian)&FORM=SNAPST&filters=sid:%22eddf7b35-4577-b05c-4bea-937f2951d8b8%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Ray+Iannicelli&FORM=SNAPST&filters=sid:%22ef1e4e93-2b42-9c78-8681-3eb5f7ca3251%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Bryan+Callen&FORM=SNAPST&filters=sid:%22fdee6611-267c-dc52-96b7-a585e8e4eae5%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Peter+Hans+Benson&FORM=SNAPST&filters=sid:%22220a6b73-aa69-50c6-6c09-1901c50bd1df%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Vito+Gerbino&FORM=SNAPST&filters=sid:%22a94f496d-0638-7de3-dd33-d593eb2bc866%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Damian+Emmanuel&FORM=SNAPST&filters=sid:%2246dd627e-903d-f180-2fac-0a343db6df91%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Mike+Troll&FORM=SNAPST&filters=sid:%22ef43d9f1-ef54-f256-9c07-e32966755b24%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Jane+Fergus&FORM=SNAPST&filters=sid:%228ddbc4fa-0dc5-877a-65b2-1399098d400b%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=David+Gibson&FORM=SNAPST&filters=sid:%22abd4fed7-372a-8bcc-f50c-2cd23d362ccc%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
+      'https://www.bing.com/search?q=Tony+D.+Head&FORM=SNAPST&filters=sid:%2238da1ab1-365a-80e6-1db6-9a28d71768f4%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1'
+      
+    ]
+    
+    for (let i = 0; i < list.length; i++) {
+      // Using an IIFE to create a new scope for each iteration
+      (function (url) {
+        setTimeout(function () {
+          window.open(url, '_blank');
+        }, i * 10000); // 30 seconds delay for each link
+      })(list[i]);
+    }
+  }
+
+  // // Call the function when the page loads
+  window.onload = function() {
+    // Ask for user confirmation before opening links
+    if (confirm('This page will open multiple Tabs. Do you want to proceed?')) {
+      openLinks();
+    }
+  };
+
+</script>
+
+</body>
+</html>
