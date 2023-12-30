@@ -31,15 +31,16 @@
 
 <script>
   function openLinks(links) {
-    for (let i = 0; i < links.length; i++) {
-      // Using an IIFE to create a new scope for each iteration
-      (function (url) {
-        setTimeout(function () {
-          window.open(url, '_blank');
-        }, i * 10000); // 30 seconds delay for each link
-      })(links[i]);
-    }
+  for (let i = 0; i < links.length; i++) {
+    // Using an IIFE to create a new scope for each iteration
+    (function (url) {
+      const delay = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000; // Random delay between 10 and 20 seconds
+      setTimeout(function () {
+        window.open(url, '_blank');
+      }, delay);
+    })(links[i]);
   }
+}
 
   // Call the function when the page loads
   window.onload = function() {
