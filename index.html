@@ -22,25 +22,31 @@
       border-radius: 5px;
     }
 
+    button.clicked {
+      background-color: #f8061b;
+    }
+
     button:hover {
-      background-color: #45a049;
+      background-color: #178ef5;
     }
   </style>
 </head>
 <body>
 
 <script>
-  function openLinks(links) {
-  for (let i = 0; i < links.length; i++) {
-    // Using an IIFE to create a new scope for each iteration
-    (function (url) {
+  async function openLinks(links, buttonId) {
+    const button = document.getElementById(buttonId);
+    button.classList.add('clicked'); // Change button color when clicked
+
+    for (let i = 0; i < links.length; i++) {
+      const url = links[i];
       const delay = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000; // Random delay between 10 and 20 seconds
-      setTimeout(function () {
-        window.open(url, '_blank');
-      }, delay);
-    })(links[i]);
+
+      await new Promise(resolve => setTimeout(resolve, delay));
+
+      window.open(url, '_blank');
+    }
   }
-}
 
   // Call the function when the page loads
   window.onload = function() {
@@ -81,7 +87,7 @@
       'https://www.bing.com/search?q=Letitia+Wright&FORM=SNAPST&filters=sid:%2299914ebe-e409-3d0c-bf30-3b73831a28aa%22+fcid:%22f34866e0-993d-ca64-05e6-190cf36d8def%22+fccat:%222%22&crslsl=3033&efirst=1',
       'https://www.bing.com/search?q=John+Slattery&FORM=SNAPST&filters=sid:%2210239045-7a4b-e104-e229-153cdf857b69%22+fcid:%22f34866e0-993d-ca64-05e6-190cf36d8def%22+fccat:%222%22&crslsl=3032&efirst=1'
       
-    ]);
+    ], 'openSet1');
       });
 
       // Open the second set of links
@@ -124,7 +130,7 @@
       'https://www.bing.com/search?q=David+Gibson&FORM=SNAPST&filters=sid:%22abd4fed7-372a-8bcc-f50c-2cd23d362ccc%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1',
       'https://www.bing.com/search?q=Tony+D.+Head&FORM=SNAPST&filters=sid:%2238da1ab1-365a-80e6-1db6-9a28d71768f4%22+fcid:%22473fffc2-2a2d-0a50-a0c5-3f6d9cf492b6%22+fccat:%222%22&crslsl=3072&efirst=1'
       
-    ]);
+    ], 'openSet2');
       });
     };
 </script>
